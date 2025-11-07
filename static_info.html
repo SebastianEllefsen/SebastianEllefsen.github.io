@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>info</title>
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&family=IBM+Plex+Sans:wght@400;500&family=Fira+Code:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap 5.3 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --c-bg: #0f1318;
+        --c-surface: #161c23;
+        --c-border: #1f2731;
+        --c-text: #e7eef7;
+        --c-muted: #9aa6b2;
+        --c-primary: #4c7dff;
+        --c-accent: #00c9a7;
+        --c-bad: #ff5858;
+        --c-good: #7ae3c3;
+        --radius: 12px;
+      }
+      html,
+      body {
+        background: var(--c-bg);
+        color: var(--c-text);
+        font-family: "IBM Plex Sans", system-ui, -apple-system, Segoe UI, Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: "Inter", system-ui, sans-serif;
+      }
+      .surface {
+        background: var(--c-surface);
+        border: 1px solid var(--c-border);
+        border-radius: var(--radius);
+      }
+      .btn-primary {
+        --bs-btn-bg: var(--c-primary);
+        --bs-btn-border-color: var(--c-primary);
+      }
+      .btn-outline-accent {
+        --bs-btn-color: var(--c-accent);
+        --bs-btn-border-color: var(--c-accent);
+        --bs-btn-hover-bg: var(--c-accent);
+        --bs-btn-hover-color: #0f1318;
+      }
+      .muted {
+        color: var(--c-muted);
+      }
+      .form-control,
+      .form-select {
+        background: #12171e;
+        border: 1px solid var(--c-border);
+        color: var(--c-text);
+        border-radius: 10px;
+      }
+      .form-control:focus,
+      .form-select:focus {
+        border-color: #2a3a50;
+        box-shadow: none;
+      }
+      .grid-2 {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      @media (min-width: 992px) {
+        .grid-2 {
+          grid-template-columns: 1.2fr 0.8fr;
+        }
+      }
+      .mono {
+        font-family: "Fira Code", ui-monospace, SFMono-Regular, Menlo, Consolas,
+          monospace;
+      }
+      .strength {
+        height: 10px;
+        background: #0f141b;
+        border-radius: 6px;
+        overflow: hidden;
+        border: 1px solid var(--c-border);
+      }
+      .strength > div {
+        height: 100%;
+        width: 0%;
+        transition: width 0.2s ease;
+        background: linear-gradient(
+          90deg,
+          #ff5858,
+          #ffba49,
+          #ffd241,
+          #00c9a7,
+          #7ae3c3
+        );
+      }
+      .pill {
+        display: inline-block;
+        font-size: 0.8rem;
+        padding: 0.2rem 0.5rem;
+        border: 1px solid var(--c-border);
+        border-radius: 999px;
+        color: var(--c-muted);
+      }
+      .kbd {
+        border: 1px solid var(--c-border);
+        background: #11161d;
+        border-radius: 6px;
+        padding: 0.1rem 0.35rem;
+        font-size: 0.85rem;
+      }
+      .table-sm td,
+      .table-sm th {
+        padding: 0.4rem 0.6rem;
+      }
+      a {
+        color: var(--c-accent);
+      }
+      a:hover {
+        color: #11e5c7;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- TOP -->
+    <nav class="navbar py-3 border-bottom border-0">
+      <div class="container">
+        <a class="navbar-brand fw-semibold" href="static_index.html"
+          >🔐 Auth<span style="color: var(--c-accent)">Lab</span></a>
+        <div class="d-flex gap-4 ms-auto">
+          <a class="btn btn-sm btn-outline-accent" href="static_index.html">Index</a>
+          <a class="btn btn-sm btn-outline-accent" href="static_stats.html">Stats</a>
+          <a class="btn btn-sm btn-outline-accent" href="static_info.html">Info</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- CONTENT -->
+    <main class="container-fluid px-4 px-md-5 my-5">
+      <header class="container my-4">
+  <div class="border rounded p-4 p-md-5">
+    <h1 class="fw-bold mb-2">Info</h1>
+    <p class="text-muted small m-0">Fakta om passord, autentisering og bruksmønstre, basert på etablerte standarder og undersøkelser.</p>
+  </div>
+</header>
+
+<section class="container my-4 my-md-5">
+  <div class="row g-4">
+    <article class="col-lg-8">
+      <!-- Passord -->
+      <div class="border rounded p-4 p-md-5 mb-4">
+        <h2 id="passord" class="h4 fw-bold mb-3">Passord — hva og hvorfor</h2>
+        <p>Passord er den mest utbredte autentiseringsmetoden globalt og brukes fortsatt i mer enn 85 prosent av alle kontoer. Et passord fungerer som en kunnskapsbasert identitetsbekreftelse der brukerens kjennskap til en streng av tegn verifiseres mot et lagret derivat. I moderne systemer lagres ikke passord direkte, men behandles gjennom kryptografiske avledningsfunksjoner.</p>
+        <p>Standard praksis, i tråd med OWASP og NIST SP 800-63B, er å kombinere en unik saltverdi med passordet og deretter beregne en kryptografisk hash ved hjelp av en ressurskrevende nøkkelavledningsfunksjon som bcrypt eller Argon2id. Slike metoder gjør ordbok- og brute-force-angrep tidkrevende. Raskere funksjoner som MD5, SHA-1 og NTLM regnes som uegnet fordi de ikke gir tilstrekkelig motstand mot moderne maskinvare.</p>
+      </div>
+
+      <!-- Empiriske funn -->
+      <div class="border rounded p-4 p-md-5 mb-4">
+        <h2 id="empiri" class="h4 fw-bold mb-3">Empiriske funn</h2>
+        <p>I en undersøkelse blant studenter oppga 57 prosent at de opplever det som vanskelig å unngå gjenbruk av passord. Samtidig svarte 93 prosent at de mener det er enkelt å lage sterke passord. 93 prosent oppgir at de har aktivert tofaktorautentisering på minst én tjeneste, og 64 prosent bruker en passordmanager til å lagre legitimasjon. Resultatene indikerer høy bevissthet om sikkerhet, men fortsatt utfordringer knyttet til unike kombinasjoner og passordhåndtering.</p>
+      </div>
+
+      <!-- Passordmanager -->
+      <div class="border rounded p-4 p-md-5 mb-4">
+        <h2 id="manager" class="h4 fw-bold mb-3">Passordmanager</h2>
+        <p>password manager er et nyttig verktøy for lagring av passord. dette gjør det letter å bruke mere kompliserte passord uten problemer med husking. disse progammene lagrer og krypterer som oftest med krypteringsalgoritmen AES-256, som regnes som ubrytelig med dagens teknologi. De krypterte passordene blir lagret bak en hovednøkkel ofte et "masterpassord", som brukes for å gi brukeren tilgang til passordne sine.</p>
+        <div class="row g-3 mt-1">
+          <div class="col-md-6">
+            <h3 class="h6 fw-semibold">Fordeler</h3>
+            <ul class="small m-0">
+              <li>Fjerner behovet for å huske mange passord.</li>
+              <li>Varsler ofte ved kjente lekkasjer.</li>
+              <li>Forenkler overgang til passkeys/SSO.</li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <h3 class="h6 fw-semibold">Ulemper</h3>
+            <ul class="small m-0">
+              <li>Enkeltfeilpunkt → beskytt hovedpassordet + 2FA.</li>
+              <li>Avhengig av leverandør og konfigurasjon.</li>
+              <li>samler alle passord hos en levrandør</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sterke passord -->
+      <div class="border rounded p-4 p-md-5 mb-4">
+        <h2 id="sterke" class="h4 fw-bold mb-3">Sterke passord</h2>
+        <p>sterke passord er passord som er vanskelig for menesker og datamaskiner å gjette eller knekke. det er vanligvis en kombinasjon av store og små bokstaver, tall og spesialtegn, og skal ikke inneholde lett gjenkjennelig informasjon som navn, datoer eller fødselsdato. selv om variasjon er bra passord er lengde det som gjør passord sterkest. det er også viktig å ikke gjenbruk passord siden da blir det risiko for at passordet kan lekke.</p>
+        <p>Det er også lurt å bruke forskjellige passord på ulike kontoer. Da er du bedre beskyttet hvis ett av passordene dine skulle bli stjålet. For å huske alle passordene kan du bruke en passord­manager som lagrer dem trygt for deg.</p>
+
+        <div class="small m-0">
+          <h3 class="h6 fw-semibold">Eksempel</h3>
+          <ul>
+            <li><strong>12–16+ tegn</strong> anbefales som minimum.</li>
+            <li>Eksempel: <code class="mono">sofa-lake-rocket-93!</code></li>
+            <li>Unngå sekvenser (<span class="mono">1234</span>, <span class="mono">qwer</span>) og vanlige ord/fraser.</li>
+          </ul>
+        </div>
+
+        <div class="row g-3 mt-1">
+          <div class="col-md-6">
+            <h3 class="h6 fw-semibold">Fordeler</h3>
+            <ul class="small m-0">
+              <li>øker sikkerhet mot hacking</li>
+              <li>vanskelig å gjette for datamaskiner og mennesker</li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <h3 class="h6 fw-semibold">Ulemper</h3>
+            <ul class="small m-0">
+              <li>vanskelig å huske.</li>
+              <li>støre sjanse for gjenbruk.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Alternativer -->
+      <div class="border rounded p-4 p-md-5 mb-4">
+        <h2 id="alternativer" class="h4 fw-bold mb-3">Alternativer og tillegg</h2>
+        <p>Passkeys, definert gjennom FIDO2- og WebAuthn-standardene, bruker asymmetrisk kryptografi der en privat nøkkel lagres sikkert på brukerens enhet, mens en offentlig nøkkel registreres hos tjenesten. Dette eliminerer behovet for passord og beskytter mot phishing. Teknologien støttes av større operativsystemer og nettlesere fra 2023.</p>
+        <p>Single Sign-On (SSO) gjør det mulig å bruke én identitet på tvers av flere tjenester. De vanligste protokollene er SAML 2.0, OAuth 2.0 og OpenID Connect. Modellen reduserer antallet passord, men innebærer at en kompromittert identitetsleverandør kan gi tilgang til flere systemer.</p>
+        <p>Tofaktorautentisering (2FA) kombinerer to uavhengige faktorer for å bekrefte en identitet. Den vanligste implementasjonen er tidsbaserte engangskoder (TOTP) som definert i RFC 6238, mens nyere metoder inkluderer fysiske sikkerhetsnøkler basert på FIDO2. SMS-basert verifisering benyttes fortsatt, men har svakheter knyttet til SIM-bytte og signalavlytting.</p>
+      </div>
+
+      <!-- Biometri -->
+      <div class="border rounded p-4 p-md-5 mb-4">
+        <h2 id="biometri" class="h4 fw-bold mb-3">Biometri</h2>
+        <p>Biometrisk autentisering baseres på kroppslige eller atferdsmessige kjennetegn som fingeravtrykk, ansiktsgeometri eller iris. Metoden fungerer som faktoren «noe du er» i flerfaktorløsninger. Biometridata lagres lokalt på enheten i sikre moduler som TPM eller Secure Enclave, og overføres normalt ikke til eksterne servere. Typiske feilrater (False Acceptance Rate og False Rejection Rate) ligger mellom én per femti- og hundretusen forsøk. Biometri brukes ofte i kombinasjon med passord eller passkeys.</p>
+      </div>
+
+      <!-- Gjenoppretting -->
+      <div class="border rounded p-4 p-md-5">
+        <h2 id="recovery" class="h4 fw-bold mb-3">Gjenoppretting</h2>
+        <p>Gjenoppretting av tilgang skjer vanligvis gjennom forhåndsgenererte koder eller sekundære faktorer. NIST 800-63B anbefaler minst to uavhengige metoder for identitetsbekreftelse i tilfeller der en primær faktor går tapt. Mange tjenester tilbyr gjenopprettingskoder som kan brukes én gang for å reaktivere kontoen. ISO 27001 krever regelmessig revisjon av tilganger for å redusere risiko for misbruk ved kompromitterte kontoer.</p>
+      </div>
+    </article>
+
+    <aside class="col-lg-4">
+      <div class="position-sticky" style="top: 1rem;">
+        <div class="border rounded p-3 mb-3">
+          <div class="small text-muted mb-2">Innhold</div>
+          <nav class="small d-grid gap-1">
+            <a href="#passord">Passord</a>
+            <a href="#empiri">Empiriske funn</a>
+            <a href="#manager">Passordmanager</a>
+            <a href="#sterke">Sterke passord</a>
+            <a href="#alternativer">Alternativer</a>
+            <a href="#biometri">Biometri</a>
+            <a href="#recovery">Gjenoppretting</a>
+          </nav>
+        </div>
+
+        <div class="border rounded p-3 mb-3">
+          <div class="small text-muted">Nøkkeltall</div>
+          <p class="small mb-0">57 % oppgir vansker med å ikke gjenbruke passord, 93 % sier de lager sterke passord uten problemer, 93 % bruker tofaktorautentisering, og 64 % benytter passordmanager.</p>
+        </div>
+
+        <div class="border rounded p-3">
+          <div class="small text-muted mb-2">Standarder og kilder</div>
+          <p class="small mb-0">NIST SP 800-63B (2023), OWASP ASVS v4.0.3, ISO 27002:2022, RFC 9106 (Argon2), RFC 6238 (TOTP), FIDO Alliance FIDO2 Specs (2022).</p>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
+    </main>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
