@@ -244,9 +244,45 @@
       <!-- Alternativer -->
       <div class="border rounded p-4 p-md-5 mb-4">
         <h2 id="alternativer" class="h4 fw-bold mb-3">Alternativer og tillegg</h2>
-        <p>Passkeys, definert gjennom FIDO2- og WebAuthn-standardene, bruker asymmetrisk kryptografi der en privat nøkkel lagres sikkert på brukerens enhet, mens en offentlig nøkkel registreres hos tjenesten. Dette eliminerer behovet for passord og beskytter mot phishing. Teknologien støttes av større operativsystemer og nettlesere fra 2023.</p>
-        <p>Single Sign-On (SSO) gjør det mulig å bruke én identitet på tvers av flere tjenester. De vanligste protokollene er SAML 2.0, OAuth 2.0 og OpenID Connect. Modellen reduserer antallet passord, men innebærer at en kompromittert identitetsleverandør kan gi tilgang til flere systemer.</p>
-        <p>Tofaktorautentisering (2FA) kombinerer to uavhengige faktorer for å bekrefte en identitet. Den vanligste implementasjonen er tidsbaserte engangskoder (TOTP) som definert i RFC 6238, mens nyere metoder inkluderer fysiske sikkerhetsnøkler basert på FIDO2. SMS-basert verifisering benyttes fortsatt, men har svakheter knyttet til SIM-bytte og signalavlytting.</p>
+        <p>
+        Et godt alternativ til å kun bruke passord er å bruke <strong>Passkeys</strong>,
+        definert gjennom FIDO2- og WebAuthn-standardene. Passkeys bruker asymmetrisk
+        kryptografi der en privat nøkkel lagres sikkert på brukerens enhet, mens en
+        offentlig nøkkel registreres hos tjenesten. Dette eliminerer behovet for
+        passord og beskytter mot phishing. Teknologien støttes av større operativsystemer
+        og nettlesere fra 2023.
+        </p>
+
+        <p>
+        <strong>Single Sign-On (SSO)</strong> gjør det mulig å bruke én identitet på
+        tvers av flere tjenester. De vanligste protokollene er SAML 2.0, OAuth 2.0
+        og OpenID Connect. Modellen reduserer antallet passord, men innebærer at en
+        kompromittert identitetsleverandør kan gi tilgang til flere systemer.
+        </p>
+
+        <p>
+        <strong>Tofaktorautentisering (2FA)</strong> kombinerer to uavhengige faktorer
+        for å bekrefte en identitet. Den vanligste implementasjonen er tidsbaserte
+        engangskoder (TOTP) som definert i RFC 6238, mens nyere metoder inkluderer
+        fysiske sikkerhetsnøkler basert på FIDO2.
+        </p>
+
+        <p>
+        Apper som <em>Microsoft Authenticator</em> og <em>Google Authenticator</em> er
+        vanligst å bruke når det kommer til tidsbaserte engangskoder. Disse appene gir
+        et ekstra lag med sikkerhet dersom passordet skulle bli kompromittert, ved å
+        sende en tidsbasert kode som oppdateres hvert minutt. På denne måten må
+        trusselaktørene både få tilgang til passordet ditt og autentiseringsappen for
+        å kunne logge seg inn på kontoen din.
+        </p>
+
+        <p>
+        <strong>SMS-basert verifisering</strong> fungerer på lignende måte som
+        autentiseringsapper. I tillegg til passordet får du sendt en engangskode på
+        SMS som brukes for å logge inn. SMS-basert verifisering benyttes fortsatt, men
+        har svakheter knyttet til SIM-bytte og signalavlytting.
+        </p>
+        
       </div>
 
       <!-- Biometri -->
