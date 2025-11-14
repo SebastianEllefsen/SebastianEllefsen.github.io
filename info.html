@@ -137,12 +137,12 @@
     <!-- TOP -->
     <nav class="navbar py-3 border-bottom border-0">
       <div class="container">
-        <a class="navbar-brand fw-semibold" href="index.html"
+        <a class="navbar-brand fw-semibold" href="static_index.html"
           >🔐 Auth<span style="color: var(--c-accent)">Lab</span></a>
         <div class="d-flex gap-4 ms-auto">
-          <a class="btn btn-sm btn-outline-accent" href="index.html">Index</a>
-          <a class="btn btn-sm btn-outline-accent" href="stats.html">Stats</a>
-          <a class="btn btn-sm btn-outline-accent" href="info.html">Info</a>
+          <a class="btn btn-sm btn-outline-accent" href="static_index.html">Index</a>
+          <a class="btn btn-sm btn-outline-accent" href="static_stats.html">Stats</a>
+          <a class="btn btn-sm btn-outline-accent" href="static_info.html">Info</a>
         </div>
       </div>
     </nav>
@@ -162,6 +162,18 @@
       <!-- Passord -->
       <div class="border rounded p-4 p-md-5 mb-4">
         <h2 id="passord" class="h4 fw-bold mb-3">Passord — hva og hvorfor</h2>
+        <p>
+          Et passord er en hemmelig tekststreng som brukes for å bekrefte identiteten til 
+          en person når man logger inn i et system. Det kan lagres i klarteks noen steder, 
+          men et passord skal aldri lagres i klartekst. I stedet bruker man en hash-funksjon(en veis funksjon) som gjør 
+          om passordet til en uleselig streng. for eksempel algoritmer som bcrypt, scrypt 
+          eller Argon2. SHA256 blir også brukt, men den er laget for å være rask og derfor blir ganske enkelt å dekryptere.
+          </p>
+          Når du logger inn, kjøres passordet du skriver inn gjennom samme funksjon, og resultatet
+          sammenlignes med det lagrede hashet.
+        </p>
+        
+
         <p>Passord er den mest utbredte autentiseringsmetoden globalt og brukes fortsatt i mer enn 85 prosent av alle kontoer. Et passord fungerer som en kunnskapsbasert identitetsbekreftelse der brukerens kjennskap til en streng av tegn verifiseres mot et lagret derivat. I moderne systemer lagres ikke passord direkte, men behandles gjennom kryptografiske avledningsfunksjoner.</p>
         <p>Standard praksis, i tråd med OWASP og NIST SP 800-63B, er å kombinere en unik saltverdi med passordet og deretter beregne en kryptografisk hash ved hjelp av en ressurskrevende nøkkelavledningsfunksjon som bcrypt eller Argon2id. Slike metoder gjør ordbok- og brute-force-angrep tidkrevende. Raskere funksjoner som MD5, SHA-1 og NTLM regnes som uegnet fordi de ikke gir tilstrekkelig motstand mot moderne maskinvare.</p>
       </div>
@@ -232,51 +244,34 @@
       <!-- Alternativer -->
       <div class="border rounded p-4 p-md-5 mb-4">
         <h2 id="alternativer" class="h4 fw-bold mb-3">Alternativer og tillegg</h2>
-        <p>
-        Et godt alternativ til å kun bruke passord er å bruke <strong>Passkeys</strong>,
-        definert gjennom FIDO2- og WebAuthn-standardene. Passkeys bruker asymmetrisk
-        kryptografi der en privat nøkkel lagres sikkert på brukerens enhet, mens en
-        offentlig nøkkel registreres hos tjenesten. Dette eliminerer behovet for
-        passord og beskytter mot phishing. Teknologien støttes av større operativsystemer
-        og nettlesere fra 2023.
-        </p>
-
-        <p>
-        <strong>Single Sign-On (SSO)</strong> gjør det mulig å bruke én identitet på
-        tvers av flere tjenester. De vanligste protokollene er SAML 2.0, OAuth 2.0
-        og OpenID Connect. Modellen reduserer antallet passord, men innebærer at en
-        kompromittert identitetsleverandør kan gi tilgang til flere systemer.
-        </p>
-
-        <p>
-        <strong>Tofaktorautentisering (2FA)</strong> kombinerer to uavhengige faktorer
-        for å bekrefte en identitet. Den vanligste implementasjonen er tidsbaserte
-        engangskoder (TOTP) som definert i RFC 6238, mens nyere metoder inkluderer
-        fysiske sikkerhetsnøkler basert på FIDO2.
-        </p>
-
-        <p>
-        Apper som <em>Microsoft Authenticator</em> og <em>Google Authenticator</em> er
-        vanligst å bruke når det kommer til tidsbaserte engangskoder. Disse appene gir
-        et ekstra lag med sikkerhet dersom passordet skulle bli kompromittert, ved å
-        sende en tidsbasert kode som oppdateres hvert minutt. På denne måten må
-        trusselaktørene både få tilgang til passordet ditt og autentiseringsappen for
-        å kunne logge seg inn på kontoen din.
-        </p>
-
-        <p>
-        <strong>SMS-basert verifisering</strong> fungerer på lignende måte som
-        autentiseringsapper. I tillegg til passordet får du sendt en engangskode på
-        SMS som brukes for å logge inn. SMS-basert verifisering benyttes fortsatt, men
-        har svakheter knyttet til SIM-bytte og signalavlytting.
-        </p>
-        
+        <p>Passkeys, definert gjennom FIDO2- og WebAuthn-standardene, bruker asymmetrisk kryptografi der en privat nøkkel lagres sikkert på brukerens enhet, mens en offentlig nøkkel registreres hos tjenesten. Dette eliminerer behovet for passord og beskytter mot phishing. Teknologien støttes av større operativsystemer og nettlesere fra 2023.</p>
+        <p>Single Sign-On (SSO) gjør det mulig å bruke én identitet på tvers av flere tjenester. De vanligste protokollene er SAML 2.0, OAuth 2.0 og OpenID Connect. Modellen reduserer antallet passord, men innebærer at en kompromittert identitetsleverandør kan gi tilgang til flere systemer.</p>
+        <p>Tofaktorautentisering (2FA) kombinerer to uavhengige faktorer for å bekrefte en identitet. Den vanligste implementasjonen er tidsbaserte engangskoder (TOTP) som definert i RFC 6238, mens nyere metoder inkluderer fysiske sikkerhetsnøkler basert på FIDO2. SMS-basert verifisering benyttes fortsatt, men har svakheter knyttet til SIM-bytte og signalavlytting.</p>
       </div>
 
       <!-- Biometri -->
       <div class="border rounded p-4 p-md-5 mb-4">
         <h2 id="biometri" class="h4 fw-bold mb-3">Biometri</h2>
         <p>Biometrisk autentisering baseres på kroppslige eller atferdsmessige kjennetegn som fingeravtrykk, ansiktsgeometri eller iris. Metoden fungerer som faktoren «noe du er» i flerfaktorløsninger. Biometridata lagres lokalt på enheten i sikre moduler som TPM eller Secure Enclave, og overføres normalt ikke til eksterne servere. Typiske feilrater (False Acceptance Rate og False Rejection Rate) ligger mellom én per femti- og hundretusen forsøk. Biometri brukes ofte i kombinasjon med passord eller passkeys.</p>
+           <div class="col-md-6">
+            <h3 class="h6 fw-semibold">Fordeler</h3>
+            <ul class="small m-0">
+              <li>Ingen passord å huske (brukervennlighet).</li>
+              <li>Kan ikke bli konfiskert (som keyloggers for passord).</li>
+              <li>Mer sikker enn passord.</li>
+              <li>Ofte brukt sammen med passord (MFA).</li>
+
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <h3 class="h6 fw-semibold">Ulemper</h3>
+            <ul class="small m-0">
+              <li>Hvis lekker så blir det permanent sårbarhet.</li>
+              <li>Krever lagring; Sikkerhetsvinået i enheten avgjør alt.</li>
+              <li>Ansikt gjennkjenning kan lures med bilder eller video, fingeravtrykk kan kopieres og stemme kan falskes med AI.</li>
+              <li>Kan misbrukes som å overvåke brukere uten samtykke.</li>
+            </ul>
+          </div>
       </div>
 
       <!-- Gjenoppretting -->
