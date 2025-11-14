@@ -1,4 +1,4 @@
 # SebastianEllefsen.github.io
 
-## to do
-tilbakemelding på nettside
+## Todo
+  *tilbakemelding på nettside
